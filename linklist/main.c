@@ -31,25 +31,42 @@ void create_lklist(int data){
     struct node *temp, *ptr;
     temp = (struct node *)malloc(sizeof(struct node));
     ptr=head;
-    /*while(1){
+    while(1){
         if(ptr->link!=NULL){
             ptr=ptr->link;
         }else{
             break;
         }
 
-    }*/
-    while(ptr!=NULL){
-       ptr=ptr->link;
     }
     temp->info=data;
     temp->link=NULL;
+
     ptr->link=temp;
+
+
  }
 
+void insert_begin(int data){
+    struct node *temp;
+    temp = (struct node *)malloc(sizeof(struct node));
+    temp->info=data;
+    temp->link=head;
+    head=temp;
+}
+void insert_pos(int pos,int data){
+    struct node *temp,*ptr;
+    temp = (struct node *)malloc(sizeof(struct node));
+    ptr=head;
+
+}
 int main(){
     create_lklist(5);
     insert_end(89);
+   // insert_end(123);
+  //  insert_begin(67);
+
+   // insert_end(37686);
     print_lklist();
 
 }
