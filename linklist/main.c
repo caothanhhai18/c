@@ -56,15 +56,31 @@ void insert_begin(int data){
 }
 void insert_pos(int pos,int data){
     struct node *temp,*ptr;
+    int i;
     temp = (struct node *)malloc(sizeof(struct node));
     ptr=head;
+    for(i=0;i<pos;i++){
+        ptr=ptr->link;
+    }
+    if(ptr->link==NULL){
+        temp->info=data;
+        temp->link=NULL;
+        ptr->link=temp;
+    }
+    else{
+        temp->info=data;
+        temp->link=ptr->link;
+        ptr->link=temp;
+    }
+
 
 }
 int main(){
     create_lklist(5);
     insert_end(89);
-   // insert_end(123);
-  //  insert_begin(67);
+    insert_end(123);
+    insert_begin(67);
+    insert_pos(1,55);
 
    // insert_end(37686);
     print_lklist();
