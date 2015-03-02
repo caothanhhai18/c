@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <conio.h>
 struct node {
     int info;
     struct node *link;
